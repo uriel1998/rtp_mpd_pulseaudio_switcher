@@ -8,7 +8,13 @@ user config directory. Also toggles MPD.
 
 Because RTP takes up bandwidth across your LAN.
 
-Related: If you're having trouble with RTP and UFW, see my UFW setup script.
+Related: If you're having trouble with RTP and UFW, [see my UFW setup script](https://github.com/uriel1998/ufw-iptables-archer), or try using the following commands:
+
+	sudo iptables -A ufw-before-input -p igmp -d 224.0.0.0/4 -j ACCEPT
+	sudo iptables -A ufw-before-output -p igmp -d 224.0.0.0/4 -j ACCEPT
+
+	sudo ufw allow in proto udp from 224.0.0.0/4
+	sudo ufw allow in proto udp to 224.0.0.0/4
 
 Related: If you're having problems with UFW clobbering your wifi, you can
 filter it at the router level if you're using DD-WRT. Try this code in your
@@ -47,11 +53,10 @@ You will want to edit the switcher script with the appropriate MPD outputs.
 
 Use mpc to determine what outputs you switch to and from 
 
-```mpc outputs
-```Output 1 (Icecast Radio) is disabled
-```Output 2 (My Pulse Output) is enabled
-```Output 3 (MPD RTP) is disabled
-
+	mpc outputs
+	Output 1 (Icecast Radio) is disabled
+	Output 2 (My Pulse Output) is enabled
+	Output 3 (MPD RTP) is disabled
 
 #TODO
 
