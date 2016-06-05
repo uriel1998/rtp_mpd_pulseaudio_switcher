@@ -26,16 +26,14 @@ firewall:
 	
 (via https://www.dd-wrt.com/phpBB2/viewtopic.php?t=39743&sid=9c70ab89bc1f41f3ca142036fe3c83b4 )
 
-#License
-
 
 #Prerequisites
 
-You need:
-Pulseaudio
-MPD
-MPC
+Pulseaudio  
+MPD  
+MPC  
 
+They should all be available in your distro.
 
 #Installation
 
