@@ -1,13 +1,6 @@
 # rtp_mpd_pulseaudio_switcher
 A script in bash to switch MPD outputs to turn on and off RTP multicast across the LAN.
 
-## rtp switcher
-
-#TODO
-
-* Use sed so that it's not clobbering user default.pa if you have additonal stuff in there.
-* Detect MPD outputs so you don't have to hardcode them
-
 #About
 
 Simple bash script to turn off rtp by swapping pulseaudio pref files in
@@ -59,4 +52,9 @@ Use mpc to determine what outputs you switch to and from
 ```Output 2 (My Pulse Output) is enabled
 ```Output 3 (MPD RTP) is disabled
 
+
+#TODO
+
+* Use sed so that it's not clobbering user default.pa if you have additonal stuff in there.
+* Detect MPD outputs so you don't have to hardcode them
 
