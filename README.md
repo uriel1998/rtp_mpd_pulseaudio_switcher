@@ -26,6 +26,15 @@ firewall:
 	
 (via https://www.dd-wrt.com/phpBB2/viewtopic.php?t=39743&sid=9c70ab89bc1f41f3ca142036fe3c83b4 )
 
+or if that doesn't work, try *this* 
+
+	insmod ebtables
+	insmod ebtable_filter
+	insmod ebt_pkttype
+	ebtables -A FORWARD -o "interface to block" --pkttype-type multicast -j DROP
+	ebtables -A OUTPUT -o "interface to block" --pkttype-type multicast -j DROP
+
+(via https://www.dd-wrt.com/wiki/index.php/Setting_up_IPTV_without_impact_to_LAN_and_Wireless_traffic )
 
 #Prerequisites
 
