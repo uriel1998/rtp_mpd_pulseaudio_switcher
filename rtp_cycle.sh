@@ -40,6 +40,9 @@ if [[ "$current_pa" =~ "sink(s) available." ]]; then
 		pulseaudio --kill
 		mpd --kill
 		cp -f $HOME/.config/pulse/defaultnortp_pa $HOME/.config/pulse/default.pa
+        # This helps ensure that you don't get an odd error, especially
+        # when SSH'ing in with X-forwarding
+        pax11publish -r
 		pulseaudio --daemonize --start	
 		mpd
 		sleep 1
@@ -51,7 +54,8 @@ if [[ "$current_pa" =~ "sink(s) available." ]]; then
 		pulseaudio --kill
 		mpd --kill
 		cp -f $HOME/.config/pulse/defaultrtp_pa $HOME/.config/pulse/default.pa
-		pulseaudio --daemonize --start
+		pax11publish -r
+        pulseaudio --daemonize --start
 		mpd
 		echo "Waiting to switch outputs"
 		sleep 1

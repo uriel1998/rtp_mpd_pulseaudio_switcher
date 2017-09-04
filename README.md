@@ -65,6 +65,14 @@ Use mpc to determine what outputs you switch to and from
 	Output 2 (My Pulse Output) is enabled
 	Output 3 (MPD RTP) is disabled
 
+#Via SSH
+
+```/usr/bin/ssh -F $HOME/.ssh/config -i $HOME/.ssh/my_rsa_key -q MPD_HOST 2> /dev/null < $HOME/rtpoff
+```/usr/bin/ssh -F $HOME/.ssh/config -i $HOME/.ssh/my_rsa_key -q MPD_HOST 2> /dev/null < $HOME/rtpon
+
+You're using those above to funnel a command into SSH, the command in question should be the only thing in those files.
+
+
 #TODO
 
 * Use sed so that it's not clobbering user default.pa if you have additonal stuff in there.
